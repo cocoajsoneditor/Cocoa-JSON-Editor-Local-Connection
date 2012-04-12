@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  JSDataExample.h
 //  CocoaJSONEditorLocalConnection
 //
 //  Created by Jan Kubny on 4/9/12.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
+@interface JSDataExampleVC : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 @end

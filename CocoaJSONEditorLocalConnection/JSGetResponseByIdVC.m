@@ -29,7 +29,6 @@
     [connectionIdTextField becomeFirstResponder];
 
     
-    [ASIHTTPRequest startClient];
     
     // Do any additional setup after loading the view, typically from a nib.
 }

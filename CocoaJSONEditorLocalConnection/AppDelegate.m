@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "ASIHTTPRequest+CocoaJSONEditorConnection.h"
+
 #import "JSGetResponseByIdVC.h"
 #import "JSMainMenuVC.h"
 
@@ -36,6 +38,10 @@
     [rootNavController release];
     
     [self.window makeKeyAndVisible];
+#ifdef DEBUG
+    [ASIHTTPRequest startClient];
+#endif
+
     return YES;
 }
 

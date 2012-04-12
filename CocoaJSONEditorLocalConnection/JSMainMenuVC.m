@@ -8,6 +8,7 @@
 
 #import "JSMainMenuVC.h"
 #import "JSGetResponseByIdVC.h"
+#import "JSDataExampleVC.h"
 
 @interface JSMainMenuVC ()
 
@@ -53,6 +54,7 @@
 #pragma mark -
 #pragma mark UITableViewDelegate, UITableViewDataSource
 #pragma mark -
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -62,7 +64,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -84,6 +86,10 @@
             cellTitle = @"Get Response By ID";
             break;
             
+        case 1:
+            cellTitle = @"Example 1";
+            break;
+
         default:
             break;
     }
@@ -108,6 +114,17 @@
             [detailViewController release];
         }
             break;
+            
+        case 1:
+        {
+            JSDataExampleVC *detailViewController = [[JSDataExampleVC alloc] initWithNibName:@"JSDataExampleVC" bundle:nil];
+            // ...
+            // Pass the selected object to the new view controller.
+            [self.navigationController pushViewController:detailViewController animated:YES];
+            [detailViewController release];
+        }
+            break;
+
             
         default:
             break;
