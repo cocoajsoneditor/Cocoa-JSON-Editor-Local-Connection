@@ -156,6 +156,7 @@
         item.detailText = [itemDic objectForKey:@"detailText"];
         
         [newResponseArray addObject:item]; 
+        [item release];
     }
     
     self.results = [NSArray arrayWithArray:newResponseArray]; 

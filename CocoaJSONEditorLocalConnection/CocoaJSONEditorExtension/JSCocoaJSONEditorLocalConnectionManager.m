@@ -342,8 +342,9 @@ static JSCocoaJSONEditorLocalConnectionManager *sharedInstance = nil;
         NSString *filePath = [tempFolder stringByAppendingPathComponent:fileName];
         
         NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-        if (data) {
-            BOOL written = [data writeToFile:filePath atomically:YES];
+        if (data)
+        {
+           [data writeToFile:filePath atomically:YES];
         }
 
     }    
@@ -356,7 +357,6 @@ static JSCocoaJSONEditorLocalConnectionManager *sharedInstance = nil;
     
     
     NSString *tempFolder = [tempDirectoryPath stringByAppendingPathComponent:folderName];
-    NSFileManager *fm = [NSFileManager defaultManager];
     
     NSString *fileName = [NSString stringWithFormat:@"%@.json",requestId];
     NSString *filePath = [tempFolder stringByAppendingPathComponent:fileName];
